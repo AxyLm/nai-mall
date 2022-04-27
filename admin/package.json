@@ -1,0 +1,38 @@
+{
+  "name": "03.vue-router-base",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "ser": "vue-cli-service serve --mode ser",
+    "pro": "vue-cli-service build --mode prod",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "default-passive-events": "^2.0.0",
+    "echarts": "^4.9.0",
+    "element-ui": "^2.15.1",
+    "lodash": "^4.17.20",
+    "vue": "^2.6.11",
+    "vue-quill-editor": "^3.0.6",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "autoprefixer": "^8.6.5",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^6.2.2",
+    "prettier": "^2.2.1",
+    "vue-template-compiler": "^2.6.11"
+  }
+}

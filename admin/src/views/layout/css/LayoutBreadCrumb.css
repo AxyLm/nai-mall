@@ -1,0 +1,7 @@
+.el-breadcrumb{
+    height: 100%;
+    line-height: 40px;
+}
+.el-breadcrumb >>> .el-breadcrumb__inner{
+    color: #fff!important;
+}

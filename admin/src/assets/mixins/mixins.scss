@@ -1,0 +1,109 @@
+@mixin prefixer($property, $value, $prefixes: webkit moz o ms) {
+    #{$property}: $value;
+
+    @each $prefix in $prefixes {
+        @if $prefix==webkit {
+            -webkit-#{$property}:#{$value};
+        }
+
+        @else if $prefix==moz {
+            -moz-#{$property}:#{$value};
+        }
+
+        @else if $prefix==o {
+            -o-#{$property}:#{$value};
+        }
+
+        @else if $prefix==ms {
+            -ms-#{$property}:#{$value};
+        }
+    }
+}
+
+@mixin posfull($top:0, $right:0, $bottom:0, $left:0) {
+    position: absolute;
+    left: $left;
+    bottom: $bottom;
+    right: $right;
+    top: $top;
+}
+
+@mixin ellipsis-single {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin vertical-center {
+    $selector: &;
+
+    @at-root {
+        #{$selector}::after {
+            display: inline-block;
+            content: "";
+            height: 100%;
+            vertical-align: middle
+        }
+    }
+}
+
+@mixin clearfix {
+    $selector: &;
+
+    @at-root {
+        #{$selector} {
+            zoom: 1;
+        }
+
+        #{$selector}:after {
+            display: block;
+            content: "";
+            height: 0;
+            visibility: hidden;
+            clear: both;
+        }
+    }
+}
+
+@mixin pseudo($pseudo) {
+    @at-root #{&}#{':#{$pseudo}'} {
+        @content
+    }
+}
+
+@mixin gen-margin($property, $value, $start:0, $end:8, $step:5) {
+    $propertyAbbr: str-slice($property, 1, 3);
+    $valueAbbr: str-slice($value, 1, 1);
+
+    @for $i from $start through $end {
+        @if $valueAbbr==a {
+            .#{$propertyAbbr}#{$valueAbbr}-#{$i*$step} {
+                #{$property}: #{$i*$step}px !important;
+            }
+        }
+        @else if $valueAbbr==h{
+            .#{$propertyAbbr}#{$valueAbbr}-#{$i*$step} {
+                #{$property}: 0 #{$i*$step}px !important;
+            }
+        }
+        @else if $valueAbbr==v{
+            .#{$propertyAbbr}#{$valueAbbr}-#{$i*$step} {
+                #{$property}: #{$i*$step}px 0 !important;
+            }
+        }
+        @else {
+            .#{$propertyAbbr}#{$valueAbbr}-#{$i*$step} {
+                #{$property}-#{$value}: #{$i*$step}px !important;
+            }
+        }
+    }
+}
+
+@mixin gen-fontsize($num:10, $step:2) {
+    @for $i from 1 through $num {
+        .fz-#{10+$i*$step} {
+            font-size: #{10+$i*$step}px !important;
+        }
+    }
+}

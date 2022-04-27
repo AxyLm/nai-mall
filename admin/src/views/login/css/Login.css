@@ -1,0 +1,18 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #3a3633;
+  }
+  .login .el-card {
+    width: 450px;
+  }
+  .login .el-card h2 {
+    text-align: center;
+    margin: 0 0 22px;
+    font-size: 30px;
+  }
+  .login .el-card .el-button {
+    width: 100%;
+  }

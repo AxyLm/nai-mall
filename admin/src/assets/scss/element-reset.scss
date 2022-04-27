@@ -1,0 +1,29 @@
+@import '../mixins/mixins.scss';
+/* 公共弹框样式 */
+.el-dialog__wrapper{ display: flex; justify-content: center; align-items: start; padding-top: 30px; }
+.el-dialog { margin: 0 !important; display: flex; flex-direction: column;  max-height: calc(100% - 30px); max-width: calc(100% - 80px);  }
+.el-dialog__header { background-color: #0c71fd!important; padding: 10px 20px 10px !important; }
+.el-dialog__title { color: #ffffff!important; font-size: 16px !important; }
+.el-dialog__headerbtn { right: -35px !important; top: -15px !important; @include prefixer(transition, All 0.4s ease-in-out);}
+.el-dialog__headerbtn .el-dialog__close { color: #e5e5e5 !important; border: 2px solid #e5e5e5; border-radius: 50%; font-weight: 600; padding: 3px; }
+.el-dialog__headerbtn:hover { @include prefixer(transform, rotate(360deg)); }
+.el-dialog .dialog-fixed-btn{ position:absolute; bottom:0; z-index: 9999; box-sizing: border-box; width:100%; padding: 15px 20px; margin-left: -20px; text-align:right; background-color: #fff; @include prefixer(box-shadow,0px -2px 8px 0px rgba(0, 0, 0, 0.1)); }
+
+.el-dialog__wrapper .el-dialog__body{ overflow: auto; flex:1; padding-bottom: 80px; padding-top: 20px!important;}
+.el-dialog__wrapper .el-dialog__body .el-tabs .el-tabs__content{ height: calc(100vh - 365px); overflow: auto; }
+.el-dialog__wrapper.no-btn .el-dialog__body { padding-bottom: 30px!important; }
+.el-dialog__wrapper.no-btn .el-dialog__body .el-tabs .el-tabs__content{ height: calc(100vh - 305px); }
+.el-dialog__wrapper.no-btn .el-dialog__body .el-tabs .data-table .el-table{ height: calc(100vh - 305px)!important; }
+
+.el-dialog.is-fullscreen { overflow: visible; }
+.el-dialog.is-fullscreen .el-dialog__body .el-tabs { box-shadow: none; }
+.el-dialog.is-fullscreen .el-dialog__body .el-tabs .el-tabs__content{ height: calc(100vh - 245px); overflow: auto; }
+.el-dialog.is-fullscreen .el-dialog__body .el-tabs .el-tabs__content .ql-editor{ height: calc(100vh - 343px); }
+.el-dialog.is-fullscreen .el-dialog__body .el-tabs .el-tabs__content .el-table{ height: calc(100vh - 410px)!important; }
+
+
+/* 弹框中最后一个按钮下面边距过大给去掉 */
+.el-dialog__body .el-form .el-row{ margin-bottom: 20px; }
+.el-dialog__body .el-form .el-form-item:last-child { margin-bottom: 0 !important; }
+
+.el-cascader-panel{ max-height: 300px; }

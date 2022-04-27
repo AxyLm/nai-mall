@@ -1,0 +1,30 @@
+{
+    "config_name": "default",
+    "jwt_config": {
+        "secretKey": "sslwyy",
+        "accessTokenExpiresIn": 86400,
+        "refreshTokenExpiresIn": 1209600
+    },
+    "upload_config": {
+        "baseURL": "http://127.0.0.1:8888",
+        "upload_ueditor": "uploads/ueditor",
+        "upload_manager": "uploads/manager"
+    },
+    "db_config": {
+        "protocol": "mysql",
+        "host": "127.0.0.1",
+        "database": "mydb",
+        "user": "root",
+        "password": "123456",
+        "port": 3306
+    },
+    "oauth2_config": {
+        "appID": "",
+        "appKey": "",
+        "redirect_url": "http://localhost:8888/wap/users/callback",
+        "get_code_url": "http://localhost:8888/oauth2.0/authorize?",
+        "get_token_url": "http://localhost:8888/oauth2.0/token?",
+        "get_me_url": "http://localhost:8888/oauth2.0/me?",
+        "get_userinfo_url": "http://localhost:8888/users/getByID/"
+    }
+}

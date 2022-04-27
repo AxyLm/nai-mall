@@ -1,0 +1,35 @@
+.el-container:first-child {
+    height: 100vh;
+}
+.el-header {
+    padding: 0 10px;
+}
+.el-header.top {
+    background-color: #f3f3f3;
+    background-image: linear-gradient(to bottom, #f3f3f3, #e2e2e2);
+}
+.el-header.main {
+    background: #3a3633;
+}
+.el-footer {
+    border-top: 1px solid #CECECE;
+    background: #3a3633;
+    color: #fff;
+    text-align: center;
+    line-height: 52px;
+}
+.el-aside {
+    background: #3a3633;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…BoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+    background: linear-gradient(to right, #3a3633 93%, #2a2725 100%);
+}
+.el-aside,
+.el-container {
+    transition: 0.2s;
+}
+.folded .el-aside {
+    width: 64px!important;
+}
+.el-main{
+    background-color: #f2f2f2;
+}

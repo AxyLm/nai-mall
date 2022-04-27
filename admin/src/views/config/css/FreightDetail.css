@@ -1,0 +1,27 @@
+.el-card >>> .el-card__header{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #fafafa;
+}
+.header{
+    overflow: hidden;
+    line-height: 32px;
+}
+.header .el-button{
+    float: right;
+}
+.default {
+    background-color: aliceblue;
+    padding: 5px 10px;
+}
+.default .el-input {
+    width: 80px;
+    margin-right: 5px;
+}
+.el-dialog.is-fullscreen .el-dialog__body .el-tabs .el-tabs__content .el-table{
+    height: auto!important;
+}
+
+.el-cascader >>> .el-cascader__search-input{
+    height: auto;
+}

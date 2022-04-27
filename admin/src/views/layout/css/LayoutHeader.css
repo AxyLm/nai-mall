@@ -1,0 +1,24 @@
+.header{ display: flex; align-items: center; height: 100%; }
+/******************** logo ********************/
+.logo-group img{ display: block; width: 140px; }
+/******************** 按钮组 ********************/
+.btn-group { display: flex; flex: 1; justify-content: flex-end;}
+.btn-group>div { margin-left: 6px; }
+.btn-group>div>a {
+    display: inline-block; min-width: 30px;
+    padding: 2px; font-size: 16px; text-align: center;
+    color: #6D6A69; border: 1px solid #bfbfbf;
+    border-radius: 2px; cursor: default !important;
+    background-color: #f8f8f8;
+    background-image: linear-gradient(to bottom, #f8f8f8, #f1f1f1);
+}
+.btn-group>div>a:hover {
+    border: 1px solid #bfbfbf; color: #222;
+    transition: all 0s; cursor: pointer;
+    box-shadow: inset 0 0 4px 1px rgba(0, 0, 0, .08);
+}
+.btn-group>div>a:active {
+    background-color: #e8e8e8;
+    background-image: linear-gradient(to bottom, #e8e8e8 0, #ededed 100%);
+    box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, .15);
+}
