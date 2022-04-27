@@ -1,13 +1,12 @@
 <template>
   <div>
-    <router-link to="/login">登录</router-link>
-      我是my
+      我是login
   </div>
 </template>
 
 <script>
 export default {
-    name:"my"
+
 }
 </script>
 

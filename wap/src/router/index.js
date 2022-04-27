@@ -5,29 +5,44 @@ const cart = ()=>import ('../views/Cart');
 const category = ()=>import ('../views/Category');
 const home = ()=>import ('../views/Home');
 const my = ()=>import ('../views/My');
+const login = ()=>import ('../views/Login');
+const layout = ()=>import ('../components/Layout');
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path:'/',
-    name:'home',
-    component:home
+    name:'layout',
+    component:layout,
+    children:[
+      {
+        path:'',
+        name:'home',
+        component:home
+      },
+      {
+        path:'cart',
+        name:'cart',
+        component:cart
+      },
+      {
+        path:'category',
+        name:'category',
+        component:category
+      },
+      {
+        path:'my',
+        name:'my',
+        component:my
+      },
+      
+    ]
   },
   {
-    path:'/cart',
-    name:'cart',
-    component:cart
-  },
-  {
-    path:'/category',
-    name:'category',
-    component:category
-  },
-  {
-    path:'/my',
-    name:'my',
-    component:my
+    path:'/login',
+    name:'login',
+    component:login
   },
 ]
 
