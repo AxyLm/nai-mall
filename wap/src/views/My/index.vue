@@ -1,13 +1,20 @@
 <template>
   <div>
-    <router-link to="/login">登录</router-link>
-      我是my
+    <layout title="我的" :header="false">
+      <van-button  @click="onLoginCllick" type="info">登录</van-button>
+    </layout>
+    
   </div>
 </template>
 
 <script>
 export default {
-    name:"my"
+    name:"my",
+    methods:{
+      onLoginCllick(){
+        this.$router.push('/login')
+      }
+    }
 }
 </script>
 

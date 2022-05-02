@@ -1,95 +1,71 @@
 <template>
   <div id="layout">
-    <div id="header">
-        <div class="left">
-  				<i class="fa fa-chevron-left"></i>
-  			</div>
-  			<h2 class="title">首页</h2>
-  			<div class="right">
-  				<i class="fa fa-search"></i>
-  			</div>
+    <van-nav-bar 
+		      fixed 
+          :title="title" 
+          left-arrow 
+          v-if="header" 
+		      @click-left="onClickLeft" 
+          @click-right="onClickRight">
+      <template slot="right"><slot name="ricon"></slot></template>
+    </van-nav-bar>
+   
+  <van-tabbar route v-model="active" v-if="footer">
+		<van-tabbar-item to="/home" icon="home-o">首页</van-tabbar-item>
+		<van-tabbar-item to="/category" icon="apps-o">分类</van-tabbar-item>
+		<van-tabbar-item to="/cart" icon="shopping-cart-o">购物车</van-tabbar-item>
+		<van-tabbar-item to="/my" icon="friends-o">我的</van-tabbar-item>
+	</van-tabbar>
+    <div class="main">
+      <slot></slot>
     </div>
-    <div id="main">
-      <router-view></router-view>
-    </div>
-    <div id="nav">
-      <ul>
-        <router-link tag="li" to="/">
-          <i class="fa fa-home"></i>
-          <p>首页</p>
-        </router-link>
-        <router-link tag="li" to="/category">
-          <i class="fa fa-list"></i>
-          <p>分类</p>
-        </router-link>
-        <router-link tag="li" to="/cart">
-          <i class="fa fa-shopping-cart"></i>
-          <p>购物车</p>
-        </router-link>
-        <router-link tag="li" to="/my">
-          <i class="fa fa-user-circle"></i>
-          <p>我的</p>
-        </router-link>
-      </ul>
-    </div>
+    
   </div>
 </template>
 
 <script>
 export default {
-    name:"Loyout"
+    name:"Loyout",
+    data(){
+      return{
+        active:0
+      }
+    },
+    methods:{
+    onClickLeft() {
+      history.go(-1);
+		},
+		onClickRight() { },
+    },
+    props:{
+      title:{
+        type:String,
+        required:true,
+        default:'标签'
+      },
+      header:{ 
+        type:Boolean, 
+        default: true 
+      },
+      footer:{ 
+        type:Boolean, 
+        default: true 
+      }
+    }
 }
 </script>
 
 <style lang="less">
-    #header{
-        display: flex;
-        height: 100px;
-        line-height: 100px;
-        width: 750px;
-        background-color: #3296fa;
-        color: #fff;
-        position: fixed;
-        top: 0;
-        font-size: 32px;
-        padding: 0 20px;
-    }
-    #header h2{
-        flex: 1;
-        text-align: center;
-    }
-    #main{
-        padding-top: 100px;
-        padding-bottom: 90px;
-    }
-    #nav {
-        background-color: #fff;
-        width: 750px;
-        height: 90px;
-        position: fixed;
-        bottom: 0;
-        font-size: 24px;
-    }
-    #nav ul{
-        display: flex;
-        height: 90px;
-        justify-content: space-around;
-    }
-    #nav ul li{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: #666;
-    }
-    #nav ul li i{
-        font-size: 40px;
-        margin-bottom: 5px;
-    }
-    /* 
-     * router-link-exact-active是vue-router加给当前激活的router-link 
-     */
-    #nav ul li.router-link-exact-active{
-        color: #3296fa;
-	  }
+  .van-tabbar,.van-nav-bar{
+		max-width: 750px;
+		left: auto !important;
+	}
+    /* 解决不显示头部时，依然有padding-top的问题 */
+  .van-nav-bar ~ .main{
+        padding-top: 92px;
+	}
+  /* 解决不显示底部时，依然有padding-bottom的问题 */
+  .van-tabbar ~ .main{
+      padding-bottom: 100px;
+  }
 </style>

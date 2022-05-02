@@ -1,7 +1,6 @@
 let pxtorem = require("postcss-pxtorem");
 module.exports= function({file}){
     let rootValue;
-    console.log(file)
     if (file && file.dirname.indexOf('vant') > -1) {
         // vant采用375的设计稿，rem基准值为37.5；
         rootValue = 37.5;

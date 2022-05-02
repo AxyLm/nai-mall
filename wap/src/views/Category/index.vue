@@ -1,6 +1,9 @@
 <template>
   <div>
+    <layout title="分类">
       我是category
+    </layout>
+      
   </div>
 </template>
 

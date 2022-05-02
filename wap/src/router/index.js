@@ -6,19 +6,21 @@ const category = ()=>import ('../views/Category');
 const home = ()=>import ('../views/Home');
 const my = ()=>import ('../views/My');
 const login = ()=>import ('../views/Login');
-const layout = ()=>import ('../components/Layout');
-
+import Placeholder from '../components/Layout/Placeholder'
+import Reg from "../views/Reg"
 Vue.use(VueRouter)
 
 const routes = [
   {
     path:'/',
-    name:'layout',
-    component:layout,
+    component:Placeholder,
     children:[
       {
         path:'',
-        name:'home',
+        redirect:"/home"
+      },
+      {
+        path:'home',
         component:home
       },
       {
@@ -44,6 +46,11 @@ const routes = [
     name:'login',
     component:login
   },
+  {
+    path:"/reg",
+    name:'reg',
+    component:Reg
+  }
 ]
 
 const router = new VueRouter({
