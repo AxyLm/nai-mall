@@ -7,6 +7,15 @@ import store from './store'
 import validators from "./common/Validators";
 Vue.prototype.$valid = validators
 
+import utils from "./utils"
+Vue.prototype.$utils = utils
+
+import api from "./request/api.js"
+import callapi from "./request/call.js"
+Vue.prototype.$http = {
+  api,callapi
+}
+
 import layout from './components/Layout/index.vue'
 Vue.component('layout',layout)
 // import "vant/lib/index.less"
@@ -16,6 +25,7 @@ Vue.component('layout',layout)
 
 import MyVant from "./components/vant/index"
 Vue.use(MyVant)
+
 
 // import 'vant/lib/button/style/less';
 

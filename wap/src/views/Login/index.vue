@@ -55,8 +55,14 @@
                 this.$router.push("/reg");
             },
             onSubmit(values) {
-                console.log(this.username)
-                console.log(this.password)
+                // console.log(this.$utils)
+                // console.log(this.username)
+                // console.log(this.password)
+                var api = this.$http.api.auth.login(this.username,this.password)
+                
+                this.$http.callapi(api).then(function(res){
+                    console.log(res)
+                })
             },
         },
     }
