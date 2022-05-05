@@ -10,11 +10,10 @@ Vue.prototype.$valid = validators
 import utils from "./utils"
 Vue.prototype.$utils = utils
 
-import api from "./request/api.js"
-import callapi from "./request/call.js"
-Vue.prototype.$http = {
-  api,callapi
-}
+// import api from "./request/api.js"
+// import callapi from "./request/call.js"
+import request from "./request"
+Vue.prototype.$http = request
 
 import layout from './components/Layout/index.vue'
 Vue.component('layout',layout)

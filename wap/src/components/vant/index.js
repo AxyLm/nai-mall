@@ -34,5 +34,6 @@ export default {
         Vue.use(Checkbox)
         Vue.use(Image)
         Vue.use(Divider)
+        Vue.use(Toast)
     }
 } 

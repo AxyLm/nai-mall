@@ -45,8 +45,8 @@
         name:"Login",
         data() {
             return {
-                username: '',
-                password: '',
+                username: '13000000000',
+                password: '123456',
                 checked:true
             };
         },
@@ -58,10 +58,18 @@
                 // console.log(this.$utils)
                 // console.log(this.username)
                 // console.log(this.password)
-                var api = this.$http.api.auth.login(this.username,this.password)
-                
-                this.$http.callapi(api).then(function(res){
-                    console.log(res)
+                console.log(11)
+                this.$store.dispatch("Login",{
+                    username:this.username,
+                    password:this.password
+                }).then(res=>{
+                    this.$toast.success({
+                        duration:600,
+                        message:"登录成功"
+                    });
+                    setTimeout(()=>{
+                        this.$router.push('/')
+                    },600)
                 })
             },
         },
