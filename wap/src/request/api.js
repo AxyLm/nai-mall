@@ -13,6 +13,15 @@ export default{
         refresh:{
 
         }
+    },
+    member:{
+        getMe(){
+            return {
+                method: "get",
+                url: "/member/getMe",
+                hasToken: true
+            }
+        }
     }
     //商品管理
     //地址管理

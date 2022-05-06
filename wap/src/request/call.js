@@ -27,7 +27,7 @@ import {isEmpty} from "../utils/funs/types.js"
         }
     }
 
-let instance = axios.create();
+    let instance = axios.create();
 
     /*
          请求拦截器
@@ -93,8 +93,8 @@ export default function call(api,options) {
     // 请求头携带token
     let _token = store.state.token;
     if (defaults.hasToken && !isEmpty(_token)) {
-        console.log(11)
-        defaults.headers.Authorization = _token;
+        console.log(_token.access_token)
+        defaults.headers.Authorization = _token.access_token;
     }
     // 发起请求
    // 1）全局捕获错误并统一处理（消息提示）
