@@ -45,10 +45,15 @@
         name:"Login",
         data() {
             return {
-                username: '13000000000',
-                password: '123456',
+                username: '',
+                password: '',
                 checked:true
             };
+        },
+        created(){
+            this.username = this.count.username
+            this.password = this.count.password
+            this.checked = this.count.remember
         },
         methods: {
             onRegClick(){
@@ -58,11 +63,16 @@
                 // console.log(this.$utils)
                 // console.log(this.username)
                 // console.log(this.password)
-                console.log(11)
+                // console.log(11)
                 this.$store.dispatch("Login",{
                     username:this.username,
                     password:this.password
                 }).then(res=>{
+                    this.$store.commit("handleAccout",{
+                        remember:this.checked,
+                        username:this.username,
+                        password:this.password
+                    })
                     this.$toast.success({
                         duration:600,
                         message:"登录成功"
@@ -73,6 +83,9 @@
                 })
             },
         },
+        computed:{
+            count(){return this.$store.state.count},
+        }
     }
 </script>
 <style lang="less" scoped>

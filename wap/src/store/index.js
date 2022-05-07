@@ -8,6 +8,7 @@ export default new Vuex.Store({
   state: {
     token:utils.getLocalStorage("token") || "",
     me:utils.getLocalStorage("me") || {},
+    count:utils.getLocalStorage("account") || {},
   },
   mutations: {
     handleToken(state,token){
@@ -17,6 +18,15 @@ export default new Vuex.Store({
     handleMe(state,me){
       state.me = me;
       utils.setLocalStorage("me",me)
+    },
+    handleAccout(state,payload){
+      if(payload.remember){
+        state.count = payload;
+        utils.setLocalStorage("account",payload)
+      }else{
+        state.count = {};
+        utils.removeLocalStorage("account")
+      }
     }
   },
   actions: {
@@ -25,7 +35,6 @@ export default new Vuex.Store({
         let api = Vue.prototype.$http.api.auth.login(
           payload.username,payload.password
         );
-        console.log(Vue.prototype.$http)
         Vue.prototype.$http.callapi(api).then(res=>{
           context.commit("handleToken",res.data);
           context.dispatch("GetMe").then(resolve).catch(reject)

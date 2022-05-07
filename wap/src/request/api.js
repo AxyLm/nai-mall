@@ -1,25 +1,32 @@
-export default{
+export default {
     //授权接口
-    auth:{
-        login:function(username,password){
-            return{
-                method:"post",
-                url:"/getToken",
-                data:{
-                    telephone:username,password
-                }
+    auth: {
+        login: function (username, password) {
+            return {
+                method: "post",
+                url: "/getToken",
+                data: {
+                    telephone: username, password
+                },
+                hasToken:false
             }
         },
-        refresh:{
+        refresh: {
 
         }
     },
-    member:{
-        getMe(){
+    member: {
+        getMe() {
             return {
                 method: "get",
                 url: "/member/getMe",
-                hasToken: true
+            }
+        },
+        register(){
+            return {
+                method:"post",
+                url:"/member/register",
+                hasToken:false
             }
         }
     }

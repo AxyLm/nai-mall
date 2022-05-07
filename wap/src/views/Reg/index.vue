@@ -75,8 +75,24 @@ export default {
             this.$router.push("/login");
         },
         onSubmit(values) {
-            console.log(this.username)
-            console.log(this.password)
+            let api = this.$http.api.member.register();
+            this.$http.callapi(api,{
+                data:{
+                    telephone:this.username,
+                    password:this.password,
+                    nick_name:this.nick_name,
+                    email:this.email
+                }
+            }).then(res=>{
+                this.$toast.success({
+                    message:"注册成功，请登录",
+                    duration:600
+                });
+                setTimeout(()=>{
+                    this.$router.push("/login")
+                },1000)
+            })
+
         }
     },
 }
