@@ -62,6 +62,8 @@ import {isEmpty} from "../utils/funs/types.js"
         let code = err.response && err.response.status;
         if (code == 401) {
             // 刷新token操作
+            Vue.prototype.$toast.fail("token失效了,请重新登录。");
+            store.commit("handleLogout");
         }else{
             return Promise.reject(err);
         }
@@ -93,7 +95,6 @@ export default function call(api,options) {
     // 请求头携带token
     let _token = store.state.token;
     if (defaults.hasToken && !isEmpty(_token)) {
-        console.log(_token.access_token)
         defaults.headers.Authorization = _token.access_token;
     }
     // 发起请求

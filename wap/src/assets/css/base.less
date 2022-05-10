@@ -1,0 +1,22 @@
+@border-width-base: 1px;
+@gray-3: #ebedf0;
+@border-color: @gray-3;
+.fixed-border-t1,.fixed-border-b1{
+    position: relative;
+}
+.fixed-border-t1::after,.fixed-border-b1::after{
+    position: absolute;
+    box-sizing: border-box;
+    content: " ";
+    pointer-events: none;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom: @border-width-base solid @border-color;
+    transform: scale(0.5);
+}
+
+.fixed-border-b1::after{
+    border-bottom: 0;
+    border-top: @border-width-base solid @border-color;
+}

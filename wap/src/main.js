@@ -28,8 +28,9 @@ Vue.use(MyVant)
 
 // import 'vant/lib/button/style/less';
 
-import "./assets/css/base.css"
-import "./assets/css/font-awesome.css"
+import "./assets/css/base.less"
+import "./assets/css/font-awesome.less"
+import "./assets/css/reset.less"
 import "./assets/js/flexible.js"
 Vue.config.productionTip = false
 

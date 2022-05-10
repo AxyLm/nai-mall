@@ -77,8 +77,9 @@
                         duration:600,
                         message:"登录成功"
                     });
+                    let backUrl = this.$route.query.back || ""
                     setTimeout(()=>{
-                        this.$router.push('/')
+                        this.$router.push('/'+backUrl)
                     },600)
                 })
             },

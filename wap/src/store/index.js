@@ -27,6 +27,12 @@ export default new Vuex.Store({
         state.count = {};
         utils.removeLocalStorage("account")
       }
+    },
+    handleLogout(state){
+      state.token = null;
+      state.me = null;
+      utils.removeLocalStorage("token")
+      utils.removeLocalStorage("me")
     }
   },
   actions: {
