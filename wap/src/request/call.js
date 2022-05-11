@@ -13,7 +13,7 @@ function showLoading(){
     if(counter==0){
         loadingIns = Vue.prototype.$toast.loading({
             duration: 0,
-            message:'登录成功',
+            message:'正在加载中',
             loadingType: 'spinner',
         });
     }

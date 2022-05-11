@@ -19,6 +19,7 @@ import Swipe from "vant/lib/swipe"
 import SwipeItem from "vant/lib/swipe-item"
 import Grid from "vant/lib/grid"
 import GridItem from "vant/lib/grid-item"
+import List from "vant/lib/list"
 
 
 import "vant/lib/button/style/less";
@@ -42,6 +43,7 @@ import "vant/lib/swipe/style/less";
 import "vant/lib/swipe-item/style/less";
 import "vant/lib/grid/style/less";
 import "vant/lib/grid-item/style/less";
+import "vant/lib/list/style/less";
 
 export default {
     install(Vue){
@@ -66,5 +68,6 @@ export default {
         Vue.use(SwipeItem)
         Vue.use(Grid)
         Vue.use(GridItem)
+        Vue.use(List)
     }
 } 
