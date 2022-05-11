@@ -29,6 +29,22 @@ export default {
                 hasToken:false
             }
         }
+    },
+    banner:{
+        getBanner(){
+            return {
+                method:"get",
+                url:"/banner/getList",
+                hasToken:false
+            }
+        }
+    },
+    list:{
+        getList(){
+            return{
+
+            }
+        }
     }
     //商品管理
     //地址管理

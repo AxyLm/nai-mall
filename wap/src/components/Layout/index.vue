@@ -68,4 +68,7 @@ export default {
   .van-tabbar ~ .main{
       padding-bottom: 100px;
   }
+  .van-tabbar{
+    z-index: 2 !important;
+  }
 </style>

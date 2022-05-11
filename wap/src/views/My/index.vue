@@ -75,11 +75,10 @@
 </template>
 
 <script>
-import Vue from 'vue'
 export default {
     name:"my",
     created(){
-         this.$store.dispatch("GetMe")
+        //  this.$store.dispatch("GetMe")
     },
     methods:{
       onLoginCllick(){
