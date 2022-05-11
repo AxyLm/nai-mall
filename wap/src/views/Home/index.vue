@@ -30,41 +30,17 @@
           <div class="home-recommend">
             <h2><span>精选推荐</span></h2>
             <van-grid :border="true" :center="false" :column-num="2">
-                <van-grid-item>
-                    <van-image :src="require('@/assets/imgs/banner2.jpg')"></van-image>
-                    <h3>莫次有机PWE活性美白洗面奶</h3>
-                    <p>
-                        <span class="price1">￥169</span>
-                        <span class="price2">￥220</span>
+                <van-grid-item v-for="item in goodList" :key="'good'+item.id">
+                    <van-image :src="item.pics&&item.pics.length ? item.pics[0]: require('@/assets/imgs/banner2.jpg') "></van-image>
+                    <h3>{{item.name}}</h3>
+                    <p v-if="item.is_promote">
+                        <span class="price1">￥{{item.promote_price}}</span>
+                        <span class="price2">￥{{item.price}}</span>
                     </p>
-                    <img class="promotion" src="@/assets/imgs/home-promotion.png">
-                </van-grid-item>
-                <van-grid-item>
-                    <van-image :src="require('@/assets/imgs/banner2.jpg')"></van-image>
-                    <h3>莫次有机PWE活性美白洗面奶</h3>
-                    <p>
-                        <span class="price1">￥169</span>
-                        <span class="price2">￥220</span>
+                    <p v-else>
+                        <span class="price1">￥{{item.price}}</span>
                     </p>
-                    <img class="promotion" src="@/assets/imgs/home-promotion.png">
-                </van-grid-item>
-                <van-grid-item>
-                    <van-image :src="require('@/assets/imgs/banner2.jpg')"></van-image>
-                    <h3>莫次有机PWE活性美白洗面奶</h3>
-                    <p>
-                        <span class="price1">￥169</span>
-                        <span class="price2">￥220</span>
-                    </p>
-                    <img class="promotion" src="@/assets/imgs/home-promotion.png">
-                </van-grid-item>
-                <van-grid-item>
-                    <van-image :src="require('@/assets/imgs/banner2.jpg')"></van-image>
-                    <h3>莫次有机PWE活性美白洗面奶</h3>
-                    <p>
-                        <span class="price1">￥169</span>
-                        <span class="price2">￥220</span>
-                    </p>
-                    <img class="promotion" src="@/assets/imgs/home-promotion.png">
+                    <img v-if="item.is_promote" class="promotion" src="@/assets/imgs/home-promotion.png">
                 </van-grid-item>
             </van-grid>
         </div>
@@ -77,17 +53,26 @@ export default {
     name:"home",
     data(){
         return{
-            bannerList:[]
+            bannerList:[],
+            goodList:[]
         }
     },
     created(){
        this.getBanner()
+       this.getGoodList()
     },
     methods:{
         getBanner(){
             let api =  this.$http.api.banner.getBanner()
             this.$http.callapi(api).then(res=>{
                 this.bannerList = res.data;
+            })
+        },
+        getGoodList(){
+            let api = this.$http.api.good.getPage(1,6,{"is_recomend":true});
+            this.$http.callapi(api).then(res=>{
+                this.goodList = res.data.good
+                console.log(res)
             })
         }
     }

@@ -39,10 +39,17 @@ export default {
             }
         }
     },
-    list:{
-        getList(){
+    good:{
+        getPage(pagenum,pagesize,data={}){
             return{
-
+                method:"post",
+                url:"/good/getPage",
+                hasToken:false,
+                params:{
+                    pagenum,
+                    pagesize
+                },
+                data
             }
         }
     }
