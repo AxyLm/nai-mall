@@ -20,6 +20,12 @@ import SwipeItem from "vant/lib/swipe-item"
 import Grid from "vant/lib/grid"
 import GridItem from "vant/lib/grid-item"
 import List from "vant/lib/list"
+import Sidebar from "vant/lib/sidebar"
+import SidebarItem from "vant/lib/sidebar-item"
+import Card from "vant/lib/card"
+import PullRefresh from "vant/lib/pull-refresh"
+import Stepper from "vant/lib/stepper"
+import Badge from "vant/lib/badge"
 
 
 import "vant/lib/button/style/less";
@@ -44,6 +50,12 @@ import "vant/lib/swipe-item/style/less";
 import "vant/lib/grid/style/less";
 import "vant/lib/grid-item/style/less";
 import "vant/lib/list/style/less";
+import "vant/lib/sidebar/style/less";
+import "vant/lib/sidebar-item/style/less";
+import "vant/lib/card/style/less";
+import "vant/lib/pull-refresh/style/less";
+import "vant/lib/stepper/style/less";
+import "vant/lib/badge/style/less";
 
 export default {
     install(Vue){
@@ -69,5 +81,11 @@ export default {
         Vue.use(Grid)
         Vue.use(GridItem)
         Vue.use(List)
+        Vue.use(Sidebar)
+        Vue.use(SidebarItem)
+        Vue.use(Card)
+        Vue.use(PullRefresh)
+        Vue.use(Stepper)
+        Vue.use(Badge)
     }
 } 

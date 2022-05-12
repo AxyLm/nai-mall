@@ -35,7 +35,9 @@ export default {
     onClickLeft() {
       history.go(-1);
 		},
-		onClickRight() { },
+		onClickRight() {
+      
+     },
     },
     props:{
       title:{
@@ -59,6 +61,7 @@ export default {
   .van-tabbar,.van-nav-bar{
 		max-width: 750px;
 		left: auto !important;
+    z-index: 2 !important;
 	}
     /* 解决不显示头部时，依然有padding-top的问题 */
   .van-nav-bar ~ .main{
@@ -67,8 +70,5 @@ export default {
   /* 解决不显示底部时，依然有padding-bottom的问题 */
   .van-tabbar ~ .main{
       padding-bottom: 100px;
-  }
-  .van-tabbar{
-    z-index: 2 !important;
   }
 </style>

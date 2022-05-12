@@ -31,7 +31,7 @@
       </van-grid>
       <div class="home-recommend">
         <h2><span>精选推荐</span></h2>
-        <van-list v-model="loading" @load="getGoodList" :finished="finished" finished-text="没有更多" :error.sync="error" error-text = "请求失败请重新加载">
+        <van-list v-model="loading" @load="getGoodList" :finished="finished" finished-text="我是有底线的" :error.sync="error" error-text = "请求失败请重新加载">
           <van-grid :border="true" :center="false" :column-num="2">
             <van-grid-item v-for="item in goodList" :key="'goodS'+item.id">
               <van-image

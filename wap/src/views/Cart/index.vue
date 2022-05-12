@@ -7,12 +7,5 @@
   </div>
 </template>
 
-<script>
-export default {
-    name:"cart",
-}
-</script>
-
-<style>
-
-</style>
+<script src="./js/index.js" ></script>
+<script src="./less/index.less" scoped></script>

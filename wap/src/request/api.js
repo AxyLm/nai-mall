@@ -52,7 +52,16 @@ export default {
                 data
             }
         }
-    }
+    },
+    category:{
+        getTree(){
+            return {
+                method:"get",
+                url:"/category/getTree",
+                hasToken:false
+            }
+        }
+    },
     //商品管理
     //地址管理
 }
